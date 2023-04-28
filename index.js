@@ -14,7 +14,7 @@ app.use(limitter(
 ))
 app.use(express.json())
 
-mongoose.connect('mongodb+srv://betechnoid:Abhishek8285366507@cluster0.ctbkbk3.mongodb.net/bloggingplatform?retryWrites=true&w=majority',{useNewUrlParser:true}).then(()=>console.log(`mongodb is connected`)).catch((e) => console.log(e.message))
+mongoose.connect(process.env.MONGO_URL,{useNewUrlParser:true}).then(()=>console.log(`mongodb is connected`)).catch((e) => console.log(e.message))
 
 app.use('/',route)
 
