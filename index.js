@@ -4,6 +4,7 @@ const app = express()
 const mongoose = require('mongoose')
 const route = require('./src/router')
 const errorMiddleware = require('./src/middleware/errorMiddleware')
+require('dotenv').config()
 app.use(limitter(
     {
         windowMs:15000 ,// 5 sec,
