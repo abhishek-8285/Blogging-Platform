@@ -9,11 +9,18 @@
   2. I build it's API's.
   3. I test these API's by Postman.
 
+## Required creadentials
+- In this project I have use MongoDb I have added .env file on it and mongoDb creadential
+- I have use cloudinary to store image cloudinary creadential
+
+
+
 ## Feature I - User
 
 ### Models
 
 - User Model
+```yaml
 
 {
 email: {string, mandatory,unique},
@@ -22,6 +29,7 @@ password: {string, mandatory}
 createdAt: {timestamp},
 updatedAt: {timestamp},
 }
+```
 
 ## User APIs
 
@@ -173,7 +181,7 @@ updatedAt: {timestamp},
       "title": "this is just only",
       "author": { "name": "yash", "authorId": "644a472574edf60e8db87f51" },
       "contend": "Architecture is a software development concept that focuses on creating",
-      "image": "C:/Users/abhis/OneDrive/Desktop/blogging plateform/Blogging-Platform/src/image/BlogImg1682624539188.png",
+      "image": "http://res.cloudinary.com/dhdkk7awu/image/upload/v1682865448/acpohc759r91kvhloper.png",
       "isDeleted": false,
       "deletedAt": null,
       "_id": "644ad01bb426fd82887bfd09",
@@ -203,7 +211,7 @@ updatedAt: {timestamp},
       "_id": "644ad01bb426fd82887bfd09",
       "title": "this is just only",
       "contend": "Architecture is a software development concept that focuses on creating",
-      "image": "C:/Users/abhis/OneDrive/Desktop/blogging plateform/Blogging-Platform/src/image/BlogImg1682624539188.png",
+      "image": "http://res.cloudinary.com/dhdkk7awu/image/upload/v1682865448/acpohc759r91kvhloper.png",
       "isDeleted": false,
       "deletedAt": null,
       "createdAt": "2023-04-27T19:42:19.352Z",
@@ -234,7 +242,7 @@ updatedAt: {timestamp},
       "_id": "644ad01bb426fd82887bfd09",
       "title": "this is just only",
       "contend": "Architecture is a software development concept that focuses on creating",
-      "image": "C:/Users/abhis/OneDrive/Desktop/blogging plateform/Blogging-Platform/src/image/BlogImg1682624539188.png",
+      "image": "http://res.cloudinary.com/dhdkk7awu/image/upload/v1682865448/acpohc759r91kvhloper.png",
       "isDeleted": false,
       "deletedAt": null,
       "createdAt": "2023-04-27T19:42:19.352Z",
@@ -269,7 +277,7 @@ updatedAt: {timestamp},
         "_id": "644a8ab15802662d3f272d02",
         "title": "this is just only",
         "contend": "Architecture is a software development concept that focuses on creating",
-        "image": "C:/Users/abhis/OneDrive/Desktop/blogging plateform/Blogging-Platform/src/image/BlogImg1682668718036.png",
+        "image": "http://res.cloudinary.com/dhdkk7awu/image/upload/v1682865448/acpohc759r91kvhloper.png",
         "isDeleted": false,
         "deletedAt": "2023-04-28T06:12:21.793Z",
         "createdAt": "2023-04-27T14:46:09.550Z",

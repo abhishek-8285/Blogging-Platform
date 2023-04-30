@@ -29,16 +29,8 @@ const createBlog = async (req, res, next) => {
     if (!req?.file) {
       return next(new ErrorHandler("image is required", 400));
     }
-    if (req?.file?.fieldname === "image") {
-      const path =
-        __dirname
-          .replace(/\\/g, "/")
-          .split("/")
-          .filter((i) => i !== "controller")
-          .join("/") +
-        "/image/" +
-        req.file.filename;
-      body["image"] = path;
+    if (req?.file?.path) {
+      body["image"] = req.file.path;
     }
     const findUser = await userModel.findById(body?.author);
     if (!findUser) {
@@ -136,7 +128,6 @@ const getAllBlog = async (req, res, next) => {
       .skip(skip);
     if (!findAllBlog.length) {
       return next(new ErrorHandler("blog not fount", 404));
-      // return res.status(404).send({ status: false, message: "blog not found" });
     }
     const totalDocuments = await blogModel.countDocuments({...findObject});
     const totalPages = Math.ceil(totalDocuments / limit);
@@ -151,9 +142,6 @@ const getAllBlog = async (req, res, next) => {
     });
   } catch (error) {
     return next(error);
-    // res
-    //   .status(500)
-    //   .send({ status: false, message: `server error`, error: error.message });
   }
 };
 
@@ -188,17 +176,8 @@ const updateBlog = async (req, res, next) => {
       console.log(error);
       return next(new ErrorHandler(error.details[0].message, 400));
     }
-    console.log(req.file);
-    if (req?.file?.fieldname === "image") {
-      const path =
-        __dirname
-          .replace(/\\/g, "/")
-          .split("/")
-          .filter((i) => i !== "controller")
-          .join("/") +
-        "/image/" +
-        req.file.filename;
-      body["image"] = path;
+    if (req?.file?.path) {
+      body["image"] = req.file.path;
     }
 
     const findBlog = await blogModel.findOne({
