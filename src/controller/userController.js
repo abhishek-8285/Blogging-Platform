@@ -90,7 +90,7 @@ const login = async (req, res, next) => {
       req.headers["x-api-key"] = token;
       return res
         .status(201)
-        .send({ status: true, message: "token created", token: token });
+        .send({ status: true, message: "token created", token: token ,userId:findUser._id});
     }
     return next(new ErrorHandler("invaild password", 401));
   } catch (error) {
