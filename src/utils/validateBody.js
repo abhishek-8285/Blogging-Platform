@@ -3,7 +3,7 @@ const joi = require("joi");
 const blogBodySchema = joi.object({
   title: joi.string().min(3).max(150).required(),
   author: joi.string().hex().length(24).required(),
-  contend: joi.string().min(15).required(),
+  content: joi.string().min(15).required(),
 });
 
 const userBodySchema = joi.object({

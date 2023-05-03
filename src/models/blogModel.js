@@ -16,7 +16,7 @@ const blogSchema = new mongoose.Schema(
       ref:'user',
       required: true,}
     },
-    contend: {
+    content: {
       type: String,
       required: true,
       trim: true,
