@@ -27,7 +27,7 @@ mongoose
 app.use("/", route);
 
 app.listen(process.env.PORT || 3000, () =>
-  console.log(`server is running on port number ${}`)
+  console.log(`server is running on port number ${process.env.PORT || 3000}`)
 );
 
 app.use(errorMiddleware);
